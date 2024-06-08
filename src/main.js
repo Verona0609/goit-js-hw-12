@@ -27,7 +27,7 @@ formEl.addEventListener("submit", async(e) =>{
    await fetchImages();
 });
 
-  
+
 
 
 const fetchImages = async() => {
@@ -59,6 +59,7 @@ smoothScroll();
 }catch(error){
 hideLoading();
 showError("Failed to fetch images. Please try again later!")
-}
 console.log(error);
+}
+
 };

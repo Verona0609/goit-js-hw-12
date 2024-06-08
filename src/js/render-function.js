@@ -12,7 +12,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 export function renderImages(images){
   const gallery = document.querySelector(".gallery");
-  gallery.innerHTML = images.map(image =>
+  const markup = images.map(image =>
 
 `<a href="${image.largeImageURL}"  class="gallery-item" >
 <img src="${image.webformatURL}" alt="${image.tags}" />

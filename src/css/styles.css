@@ -30,7 +30,7 @@ form{
 }
 
 
-button{
+.form button{
   border-radius: 8px;
 padding: 8px 16px;
 width: 91px;
@@ -62,7 +62,6 @@ input:hover {
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
-
 }
 
 .gallery-item{
@@ -83,6 +82,8 @@ input:hover {
   justify-content: space-around;
 
 }
+
+
 
 
 
@@ -109,6 +110,18 @@ input:hover {
   line-height: 200%;
   letter-spacing: 0.04em;
   color: #2e2f42;
+}
+
+.load-more{
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #4e75ff;
+border: none;
+color: #fff;
+border-radius: 8px;
 }
 
 .loader {
