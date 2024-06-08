@@ -14,7 +14,7 @@ let page = "";
 
 formEl.addEventListener("submit", async(e) =>{
   e.preventDefault();
-  
+
   query = e.target.elements.query.value.trim();
 
   if (!query){

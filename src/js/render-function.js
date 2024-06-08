@@ -10,7 +10,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 
-export function renderImages(images){
+export function renderImages(images){  
   const gallery = document.querySelector(".gallery");
   const markup = images.map(image =>
 
