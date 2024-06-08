@@ -27,7 +27,7 @@ formEl.addEventListener("submit", async(e) =>{
    await fetchImages();
 });
 
-
+  
 
 
 const fetchImages = async() => {
@@ -43,7 +43,7 @@ const fetchImages = async() => {
 renderImages(data.hits);
 page += 1;
 
-loadMoreBtn.addEventListener("click", fetchImages); 
+loadMoreBtn.addEventListener("click", fetchImages);
 
 if (page * 15 >= data.totalHits){
 toggleLoadMoreButton(false);
