@@ -32,3 +32,5 @@ return res.data;
   throw error;
 }
 }
+
+searchImages();
