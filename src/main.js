@@ -36,12 +36,12 @@ renderImages(data.hits);
 page += 1;
 
 
-
+  
 if (page * 15 >= data.totalHits){
 toggleLoadMoreButton(false);
 iziToast.info({
   title:"Error",
-  message: "We're sorry, but you've reached the end of search results.", 
+  message: "We're sorry, but you've reached the end of search results.",
   position: "topRight"
 })
 }else{
