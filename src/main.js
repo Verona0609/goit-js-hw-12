@@ -56,7 +56,7 @@ formEl.addEventListener("submit", async(e) =>{
     showError("Please enter a search query!");
     return;
   }
-   
+
   page = 1;
   clearGallery();
   toggleLoadMoreButton(false);
