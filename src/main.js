@@ -1,6 +1,9 @@
 import  {searchImages} from "./js/pixabay-api.js";
 import { showLoading, hideLoading, showError, renderImages, clearGallery, toggleLoadMoreButton, smoothScroll } from "./js/render-function.js";
 
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+
 
 
 
@@ -38,6 +41,7 @@ if (page * 15 >= data.totalHits){
 toggleLoadMoreButton(false);
 iziToast.info({
   title:"Error",
+  message: "We're sorry, but you've reached the end of search results.",
   position: "topRight"
 })
 }else{
