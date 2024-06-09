@@ -54,7 +54,7 @@ formEl.addEventListener("submit", async(e) =>{
 
   if (!query){
     showError("Please enter a search query!");
-    return;
+    return;  
   }
 
   page = 1;
