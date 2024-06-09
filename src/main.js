@@ -4,22 +4,12 @@ import { showLoading, hideLoading, showError, renderImages, clearGallery, toggle
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-
-
-
-
-
-
 let query = "";
 let page = "";
 
 const formEl = document.querySelector(".form")
 
 const loadMoreBtn = document.querySelector(".load-more")
-
-
-
-
 
 
 const fetchImages = async() => {
@@ -36,7 +26,7 @@ renderImages(data.hits);
 page += 1;
 
 
-  
+
 if (page * 15 >= data.totalHits){
 toggleLoadMoreButton(false);
 iziToast.info({
