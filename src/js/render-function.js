@@ -32,11 +32,11 @@ export function renderImages(images){
 
 
 export function showLoading(){
-  document.querySelector(".loader").style.display = "block";
+  document.querySelector(".loader").classList.remove(`hidden`);
 }
 
 export function hideLoading(){
-  document.querySelector(".loader").style.display = "none";
+  document.querySelector(".loader").classList.add(`hidden`);
 }
 
 export function showError(message){

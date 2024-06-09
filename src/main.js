@@ -27,7 +27,7 @@ page += 1;
 
 
 
-if (page * 15 >= data.totalHits){
+if (page * 15 === data.totalHits){
 toggleLoadMoreButton(false);
 iziToast.info({
   title:"Error",
@@ -41,7 +41,8 @@ smoothScroll();
 }catch(error){
 hideLoading();
 showError("Failed to fetch images. Please try again later!")
-console.log(error);
+console.error(error);
+toggleLoadMoreButton(false);
 }
 
 };
@@ -58,6 +59,7 @@ formEl.addEventListener("submit", async(e) =>{
 
   page = 1;
   clearGallery();
+  toggleLoadMoreButton(false);
    await fetchImages();
 });
 
