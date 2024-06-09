@@ -38,7 +38,6 @@ if (page * 15 >= data.totalHits){
 toggleLoadMoreButton(false);
 iziToast.info({
   title:"Error",
-  message: "We are sorry, but you have reached the end of search results.",
   position: "topRight"
 })
 }else{
