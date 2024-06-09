@@ -8,9 +8,11 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 
+const instance = new SimpleLightbox(".gallery a");
 
 
-export function renderImages(images){  
+
+export function renderImages(images){
   const gallery = document.querySelector(".gallery");
   const markup = images.map(image =>
 
@@ -25,7 +27,7 @@ export function renderImages(images){
 </a>`
   ).join(``);
   gallery.insertAdjacentHTML("beforeend", markup);
-  new SimpleLightbox(".gallery a").refresh();
+  instance.refresh();
 };
 
 
@@ -66,3 +68,4 @@ export const smoothScroll = ()=>{
     behavior: "smooth",
   });
 };
+

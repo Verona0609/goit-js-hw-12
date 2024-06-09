@@ -1,15 +1,20 @@
 import  {searchImages} from "./js/pixabay-api.js";
 import { showLoading, hideLoading, showError, renderImages, clearGallery, toggleLoadMoreButton, smoothScroll } from "./js/render-function.js";
 
-const formEl = document.querySelector(".form")
 
-const loadMoreBtn = document.querySelector(".load-more")
+
 
 
 
 
 let query = "";
 let page = "";
+
+const formEl = document.querySelector(".form")
+
+const loadMoreBtn = document.querySelector(".load-more")
+
+
 
 
 formEl.addEventListener("submit", async(e) =>{
@@ -30,6 +35,7 @@ formEl.addEventListener("submit", async(e) =>{
 
 
 
+
 const fetchImages = async() => {
   showLoading();
    try{
@@ -43,7 +49,13 @@ const fetchImages = async() => {
 renderImages(data.hits);
 page += 1;
 
+
 loadMoreBtn.addEventListener("click", fetchImages);
+
+
+
+
+
 
 if (page * 15 >= data.totalHits){
 toggleLoadMoreButton(false);
