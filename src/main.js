@@ -18,7 +18,7 @@ const fetchImages = async() => {
     const data = await searchImages(query, page);
     hideLoading();
 
-    if( data.hits.lenght === 0 && page === 1){
+    if( data.hits.length === 0 && page === 1){
       showError ( "Sorry, there are no images matching your search query. Please try again!");
       return;
     }
