@@ -1,11 +1,21 @@
-import  {getArticles} from "./js/pixabay-api.js";
-import { showLoading, hideLoading, showError, renderImages, clearGallery, toggleLoadMoreButton, smoothScroll } from "./js/render-function.js";
+import  {getArticles, perPage} from "./js/pixabay-api.js";
+import { renderImages,showLoading,hideLoading,showError, clearGallery,toggleLoadMoreButton,smoothScroll } from "./js/render-function.js";
+
+
+
+
 
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
+/* import perPage from './js/pixabay-api' */
+
+
 
 let query = "";
-let page = "";
+let page = 1;
+let maxPage = 0;
+
+
 
 const formEl = document.querySelector(".form")
 
@@ -30,7 +40,10 @@ const fetchImages = async() => {
 page += 1;
 
 
-if ( page  === data.totalHits  ){
+maxPage = Math.ceil(data.totalHits / 15);
+
+
+if (page > maxPage){
 toggleLoadMoreButton(false);
 
 iziToast.info({
@@ -42,7 +55,7 @@ iziToast.info({
 toggleLoadMoreButton(true);
 }
 smoothScroll();
-}catch(error){
+} catch(error){
 hideLoading();
 showError("Failed to fetch images. Please try again later!")
 console.error(error);
@@ -72,3 +85,4 @@ formEl.addEventListener("submit", async(e) =>{
 loadMoreBtn.addEventListener("click", fetchImages);
 
 toggleLoadMoreButton(false);
+

@@ -10,12 +10,12 @@
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 24px;
   font-weight: 400;
 
   color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  background-color: rgba(171, 193, 240, 0.87);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -27,6 +27,12 @@
 
 form{
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+
 }
 
 
@@ -49,11 +55,23 @@ input{
   border-radius: 4px;
   width: 272px;
   height: 40px;
+  background-color: rgba(204, 217, 245, 0.87);
 
 }
 
+
+.form input:focus {
+  outline: none;
+  border-color: #3a20cf;
+  font-size: 16px; /* збільшений розмір тексту при фокусі */
+}
+
+.input:active {
+  background-color: #e0ffe0; /* змінений колір фону при натисканні */
+}
+
 input:hover {
-  border: 1px solid #000;
+  border: 1px solid #030c13;
   cursor: pointer;
 }
 

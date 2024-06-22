@@ -7,7 +7,6 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-
 const instance = new SimpleLightbox(".gallery a");
 
 
@@ -68,4 +67,12 @@ export const smoothScroll = ()=>{
     behavior: "smooth",
   });
 };
+
+
+
+
+
+
+
+
 
