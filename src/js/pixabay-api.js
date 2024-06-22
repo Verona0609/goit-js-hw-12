@@ -1,13 +1,16 @@
 import axios from "axios";
 
-const BASE_URL = `https://pixabay.com`;
+
+
+
+ const BASE_URL = `https://pixabay.com`;
 const END_POINT = `/api/`
 
 
-/* const url= `${BASE_URL}${END_POINT}?${params}`; */
 
 
-export const searchImages = async(query, page = 1, perPage = 15)=>{
+
+export const getArticles = async(query, page = 1, perPage = 15)=>{
 
 try{
   const res = await axios.get(`${BASE_URL}${END_POINT}`, {
@@ -33,4 +36,4 @@ return res.data;
 }
 }
 
-searchImages();
+getArticles();

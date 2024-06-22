@@ -1,4 +1,4 @@
-import  {searchImages} from "./js/pixabay-api.js";
+import  {getArticles} from "./js/pixabay-api.js";
 import { showLoading, hideLoading, showError, renderImages, clearGallery, toggleLoadMoreButton, smoothScroll } from "./js/render-function.js";
 
 import iziToast from "izitoast";
@@ -15,20 +15,24 @@ const loadMoreBtn = document.querySelector(".load-more")
 const fetchImages = async() => {
   showLoading();
    try{
-    const data = await searchImages(query, page);
+    const data = await getArticles(query, page);
     hideLoading();
+
+
 
     if( data.hits.length === 0 && page === 1){
       showError ( "Sorry, there are no images matching your search query. Please try again!");
       return;
     }
-renderImages(data.hits);
+
+
+    renderImages(data.hits);
 page += 1;
 
 
-
-if (page * 15 === data.totalHits){
+if ( page  === data.totalHits  ){
 toggleLoadMoreButton(false);
+
 iziToast.info({
   title:"Error",
   message: "We're sorry, but you've reached the end of search results.",
@@ -66,3 +70,5 @@ formEl.addEventListener("submit", async(e) =>{
 
 
 loadMoreBtn.addEventListener("click", fetchImages);
+
+toggleLoadMoreButton(false);
